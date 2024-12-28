@@ -1,0 +1,42 @@
+Docker mysql
+
+Mysql 默认使用的是3306 端口
+
+docker pull mysql
+
+docker run -d -p 3308:3306 --name=allenmysql -e MYSQL_ROOT_PASSWORD=Helloworld2024 mysql     ——— 启动mysql 容器
+
+docker run -d -p 0.0.0.0:3309:3306 --restart=always --name=allenmysql -e MYSQL_ROOT_PASSWORD=Helloworld2024 mysql      ———— 加上自动重启参数
+
+mysql_apps % docker run -d -p 0.0.0.0:3309:3306 --restart=always --name=allenmysql -v /Users/allen/mysql_apps:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=Helloworld2024 mysql
+
+————— 对应宿主机数据卷
+
+
+docker exec allenmysql sh -c 'exec mysqldump --all-databases -uroot -p"Helloworld2024"' >/Users/allen/mysql_backup/all-databases.sql        ——— 备份mysql 数据库文件
+
+
+
+
+
+
+
+
+docker exec -it allenmysql bash                        ——————— 进入mysql 容器
+
+mysql -u root -p                                                   ———————— 进入 mysql 
+
+show databases;                                                 ———————— 查看数据库
+
+create database allen_data;                             ———————— 创建数据库
+
+use allen_data;                                                    ———————— 使用该数据库
+
+create table students(id int(10) primary key auto_increment, name varchar(40));                 —————————创建students 表格
+
+docker logs allenmysql  （容器ID 或者容器名称）               ————————  查看mysql 日志
+
+
+
+
+
