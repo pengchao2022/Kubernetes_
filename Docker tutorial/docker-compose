@@ -1,0 +1,46 @@
+docker-compose 
+
+example 1:
+
+services:
+  nginx_allen:
+   image: nginx:perl
+   ports:
+    - 8910:80
+
+  apache_allen:
+   image: httpd:2.4.62
+   ports:
+    - 8911:80
+
+
+docker-compose up -d          ———  运行服务
+
+example 2:   Install mysql
+
+services:
+  mysql_allen:
+   image: mysql:oracle
+   ports:
+    - 3322:3306
+   environment:
+    - "MYSQL_ROOT_PASSWORD=Helloworld2024"
+
+
+example 3: Install mysql with volume mapped
+
+services:
+
+  mysql_gogo:
+   image: mysql:oracle
+   ports:
+    - "3498:3306"
+   environment:
+    - "MYSQL_ROOT_PASSWORD=Helloworld2024"
+   volumes:
+    - /Users/allen/nginx_project/allen2024/data/beibei:/var/lib/mysql
+
+
+
+
+
