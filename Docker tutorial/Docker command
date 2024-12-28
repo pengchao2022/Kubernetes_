@@ -16,11 +16,6 @@ docker rmi -f $(docker images -qa)
 docker rm -f $(docker ps -qa)
 
 
-Docker hub account
-
-pengchao.ma2@outlook.com
-Hellokity@20222022
-
 Docker build 命令运行在有 Dockerfile 的文件夹里，然后生成 docker image .命令如下：
 
 docker build -t hello-world . 
