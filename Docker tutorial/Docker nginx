@@ -1,0 +1,40 @@
+Docker nginx
+
+nginx 使用 80 端口
+
+nginx html in doker path:
+
+/usr/share/nginx/html
+
+Docker run nginx 并映射宿主机文件夹的完整命令：
+
+docker run -d -p 0.0.0.0:3366:80 --name=allennginx -v /Users/allen/nginx/apps/:/usr/share/nginx/html nginx
+
+docker run -d -p 0.0.0.0:8877:80 --name=allennginx -v /Users/allen/nginx/apps:/usr/share/nginx/html:ro nginx   ————— 带上ro 参数代表容器内只读，即只能从宿主机进行修改
+
+                                                                                                                                                                                                                          只能从宿主机目录同步到容器，而不能从容器同步到宿主机
+
+
+使用别名方式创建数据卷
+
+docker run -d -p 8085:80 --name=allennginx -v aaaa:/usr/share/nginx/html:ro nginx
+
+docker 自动创建的别名 aaaa 在宿主机的位置位：  /var/lib/docker/volumes/ 下面
+
+
+docker run --name my-custom-nginx-container -v /host/path/nginx.conf:/etc/nginx/nginx.conf:ro -d nginx
+
+
+查看容器的网络信息使用 ：
+docker inspect allennginx02
+
+
+
+
+
+
+
+
+
+
+
