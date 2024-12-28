@@ -1,0 +1,24 @@
+Docker Redis
+
+docker pull redis       ——— 下载 redis 镜像
+
+redis 默认使用的是6379 端口
+
+
+docker run -d -p 6379:6379 --name=allenredis --restart=always redis         —————     启动 redis 容器
+
+docker exec -it allenredis bash                ———————     进入 redis 容器
+
+redis-cli        ————— redis 客户端命令行工具
+
+set name allen       
+
+get name
+
+docker 启动 redis 步骤
+
+开放端口 后台启动 指定名称 总是启动 开启持久化 映射数据文件
+
+docker run -d -p 6379:6379 --name=allenredis --restart=always -v /Users/allen/redis:/data redis redis-server --appendonly yes
+
+
