@@ -1,0 +1,96 @@
+
+
+
+Docker command
+
+1, 查看所有镜像的ID：
+docker images -qa
+
+2，查看所有容器的ID：
+docker ps -qa
+
+3,  删除所有镜像
+docker rmi -f $(docker images -qa)
+
+4，删除所有容器
+docker rm -f $(docker ps -qa)
+
+
+Docker hub account
+
+pengchao.ma2@outlook.com
+Hellokity@20222022
+
+Docker build 命令运行在有 Dockerfile 的文件夹里，然后生成 docker image .命令如下：
+
+docker build -t hello-world . 
+
+docker run 命令用于将镜像 image 来生成 运行的 容器 Container, 命令如下：
+
+sudo docker run -t -i -d --name=allen2024 --restart=always -p 0.0.0.0:80:80 allen-web-site
+
+进入docker 容器里面的命令：
+
+sudo docker exec -it allen2024 bash
+
+docker ps -a 命令来查看所有容器：
+
+sudo docker ps -a
+
+docker stop 命令来停止运行中的容器：
+
+sudo docker stop allenma2024
+
+docker start 命令来启动已经停止的容器：
+
+sudo docker start allenma2024
+
+docker rm -f $(docker ps -qa)        ——— 删除所有容器，包括已经在运行中的容器
+
+docker logs fedora2024.    ———查看容器运行的 日志
+
+docker logs -f 453               ———实时查看容器运行日志
+
+docker exec -it fedora2024 /bin/bash       ————  进入容器内部
+
+docker exec -t -i myalpine ash         ——— 进入alpine 容器内部
+
+docker cp fedora2024:/home/helloworld.c ~/test000        ————— 将容器内的文件copy 到宿主机
+
+
+docker top 453                       —————————————  查看容器内运行的进程
+
+docker inspect b88               ————————————  ——查看容器内部的详细信息
+
+docker run -d -p 3399:8080 --name=allentomcat -v /Users/allen/tomcat/apps:/usr/local/tomcat/webapps tomcat     ———映射本地文件夹到容器目录
+
+将容器打包成为一个新的镜像
+
+docker commit -m “Deploy java sum application” -a “Allen Ma”    容器名称或ID     新的容器名称：版本号
+
+
+将生成的镜像进行保存：
+
+docker save 镜像名称：版本号 -o 保存路径+新的镜像名版本号.tar
+docker save allenjavasum:1.0 -o /Users/allen/image_backup/allenjavasum-1.0.tar
+
+将生成的镜像进行恢复：
+
+docker load -i + tar 包的路径名称
+
+docker load -i allenjavasum-1.0.tar 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
