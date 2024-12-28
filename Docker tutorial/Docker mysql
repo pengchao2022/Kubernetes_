@@ -4,11 +4,11 @@ Mysql 默认使用的是3306 端口
 
 docker pull mysql
 
-docker run -d -p 3308:3306 --name=allenmysql -e MYSQL_ROOT_PASSWORD=Helloworld2024 mysql     ——— 启动mysql 容器
+docker run -d -p 3308:3306 --name=allenmysql -e MYSQL_ROOT_PASSWORD=1@8999SSSuiii  mysql     ——— 启动mysql 容器
 
 docker run -d -p 0.0.0.0:3309:3306 --restart=always --name=allenmysql -e MYSQL_ROOT_PASSWORD=1@8999SSSuiii mysql      ———— 加上自动重启参数
 
-mysql_apps % docker run -d -p 0.0.0.0:3309:3306 --restart=always --name=allenmysql -v /Users/allen/mysql_apps:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=Helloworld2024 mysql
+mysql_apps % docker run -d -p 0.0.0.0:3309:3306 --restart=always --name=allenmysql -v /Users/allen/mysql_apps:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=1@8999SSSuiii  mysql
 
 ————— 对应宿主机数据卷
 
