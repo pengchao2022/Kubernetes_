@@ -24,7 +24,7 @@ services:
    ports:
     - 3322:3306
    environment:
-    - "MYSQL_ROOT_PASSWORD=Helloworld2024"
+    - "MYSQL_ROOT_PASSWORD=1@8999SSSuiii"
 
 
 example 3: Install mysql with volume mapped
@@ -36,7 +36,7 @@ services:
    ports:
     - "3498:3306"
    environment:
-    - "MYSQL_ROOT_PASSWORD=Helloworld2024"
+    - "MYSQL_ROOT_PASSWORD=1@8999SSSuiii"
    volumes:
     - /Users/allen/nginx_project/allen2024/data/beibei:/var/lib/mysql
 
