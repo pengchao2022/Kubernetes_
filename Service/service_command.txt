@@ -16,3 +16,9 @@ kubectl expose deploy nginx --name=svc-nginx1 --type=ClusterIP --port=80 --targe
 
 kubectl get svc svc-nginx -n dev2025 -o wide
 
+删除 service
+
+kubectl delete svc svc-nginx-1 -n dev2025
+
+
+
