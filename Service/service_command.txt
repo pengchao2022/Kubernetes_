@@ -1,5 +1,13 @@
 service 是一组pod 对外提供服务的接口
 
+servie 分类：
+
+1， ClusterIP
+2,  NodePort
+3,  LoadBalance
+4,  ExternalName
+
+
 暴露service
 
 kubectl expose deploy nginx --name=svc-nginx1 --type=ClusterIP --port=80 --target-port=80 -n dev2025
