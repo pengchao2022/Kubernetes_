@@ -1,0 +1,13 @@
+
+
+
+#使用命令行创建namespace
+
+kubectl create ns dev2025
+
+#使用yaml 创建namespace
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: dev2025  #name of the namespace
