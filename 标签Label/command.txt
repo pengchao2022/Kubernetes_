@@ -1,0 +1,15 @@
+为pod 资源打标签命令
+
+kubectl label pod nginx-pod version=1.0 -n dev2025
+
+为Pod 资源更新标签 
+
+ kubectl label pod nginx-pod version=2.0 -n dev2025 --overwrite
+
+ 查看标签
+
+ kubectl get pod nginx-pod -n dev2025 --show-labels
+
+ 删除标签
+
+ kubectl label pod nginx-pod version- -n dev2025
