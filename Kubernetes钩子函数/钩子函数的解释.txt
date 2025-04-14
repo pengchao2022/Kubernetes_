@@ -32,10 +32,9 @@ Kubernetes 在主容器的启动之后和停止之前提供了两个钩子函数
   lifecycle:
     postStart:
       httpGet:
-        path: / #RUL 地址
+        path: / #RUL 地址       #拼凑起来是一个网址如： http://192.168.109.100:80/
         port: 80
         host: 192.168.109.100 #主机地址
         scheme: HTTP #支持的协议，http或者https
 
 
-        
