@@ -1,0 +1,16 @@
+
+taint 污点，是作用于 node 上面的。
+
+1, 设置污点的命令：
+
+kubectl taint nodes node1 key=value:effect
+
+2, 去除污点的命令：
+
+kubectl taint nodes node1 key:effect-
+
+3, 去除所有污点的命令：
+
+kubectl taint nodes ndoe1 key-
+
+
