@@ -1,0 +1,27 @@
+
+Pod 的说明：
+
+按照pod 的创建方式，可将pod 分为两类
+
+1，自主式 Pod : Kubernetes 直接创建出来的，删除候就没有了
+
+2，Pod 控制器创建出来的Pod: Pod 控制器创建的Pod ，在 Pod 删除后，还会自动重建
+
+
+Pod 控制器的种类：
+
+常见的种类：
+
+1, ReplicaSet : 保证指定数量的pod 运行， 并支持Pod 数量变更，镜像版本更新
+
+2, Deployment : 通过控制ReplicaSet来控制pod , 并支持滚动升级，版本回退
+
+3，HPA --- Horizontal Pod Autoscaler: 可以根据集群负载自动调整Pod的数量，实现削峰填补
+
+4, DaemonSet : 在集群中的指定Node 上都运行一个副本，一般用于守护进程类的任务
+
+5, Jod: 它创建出来的Pod只要完成任务就立即退出，用于执行一次性任务
+
+6，Cronjob: 它创建的Pod会周期性的执行，用于执行周期性任务
+
+7，StatefulSet : 管理有状态应用
