@@ -1,0 +1,23 @@
+# 以exec 方式为例，演示钩子函数的使用
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-hood-exec
+  namespace: dev2025
+spec:
+  containers:
+  - name: main-container
+    image: nginx:1.71.1
+    ports:
+    - name: nginx-port
+      containerPort: 80
+    lifecycle:
+      postStart:
+        exec:  #在容器启动后执行一个命令，修改掉nginx 的默认首页内容
+          command: ["/bin/sh", "c", "echo postStart..." > /usr/share/nginx/html/index.html"]
+      preStop:
+        exec:  #在容器停止之前停止nginx 服务
+          command: ["usr/sbin/nginx", "-s", "quit"]
+
+
