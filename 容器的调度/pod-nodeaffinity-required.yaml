@@ -1,0 +1,24 @@
+#查看node 上面的标签使用命令
+
+#kubectl get nodes --show-labels
+
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-nodeaffinity-required
+  namespace: dev2025
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.17.1
+  affinity: #亲和性设置
+    nodeAffinity: #设置node亲和性
+      requiredDuringSchedulingIgnoredDuringExecution: #硬性限制
+        nodeSelectorTerms:
+        - matchExpressions: #匹配ENV的值在["xxx","yyy"]中的标签
+          - key: nodeenv
+            operator: In
+            values: ["pro", "yyy"] #满足Node 的标签值要么是pro 要么是yyy的情况
+
+
