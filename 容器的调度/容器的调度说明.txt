@@ -1,0 +1,12 @@
+Scheduler 组件来决定Pod 在那个node 上面
+
+Pod 调度 分为四种
+
+1, 自动调度 ----- 由Scheduler 经过一系列算法去分配调度
+
+2，定向调度 ----- NodeName, NodeSelector 完成调度
+
+3，亲和性调度 ---- NodeAffinity, PodAffinity, PodAntiAffinity 完成调度
+
+4，污点容忍调度 ---- Taints, Toleration 完成调度
+
