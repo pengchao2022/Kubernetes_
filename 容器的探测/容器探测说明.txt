@@ -1,0 +1,21 @@
+容器的探测用于检测容器中的应用实例是否正常工作， 是保障业务可用性的一种传统机制， 如果经过
+
+探测，实例的状态不符合预期，那么kubernetes 就会把该问题实例摘除， 不承担业务流量
+
+kubernetes 提供了两种探针来实现容器探测，分别是：
+
+livenesProbes:  存活性探针---- 决定是否重启容器  ---- restart application if it fails
+
+readinessProbes: 就绪性探针 -----决定是否将请求转发给容器------ ensure the application is ready to start
+
+
+上述两种容器探测均支持三种方式：
+
+1, exec command 
+
+2, TCPSocket
+
+3, HTTPGet 
+
+
+
