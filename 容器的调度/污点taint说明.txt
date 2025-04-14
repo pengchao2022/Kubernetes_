@@ -1,4 +1,3 @@
-
 taint 污点，是作用于 node 上面的。
 
 1, 设置污点的命令：
@@ -13,4 +12,11 @@ kubectl taint nodes node1 key:effect-
 
 kubectl taint nodes ndoe1 key-
 
+taint 污点有三个重要的属性：
+
+1, PreferNoSchedule ------- 可以部署pod 的
+
+2，NoSchedule ----------- 不再接受新的pod 部署，但是原有的运行的pod 不受影响
+
+3, NoExecute ------------ 无法部署pod
 
