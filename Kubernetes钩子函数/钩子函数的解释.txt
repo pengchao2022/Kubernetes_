@@ -1,0 +1,41 @@
+
+Kubernetes 在主容器的启动之后和停止之前提供了两个钩子函数
+
+1， post start : 容器创建之后执行， 如果失败了，会重新启动容器
+
+2， pre stop:   容器终止之前执行， 执行完成之后容器将成功终止， 在其完成之前会阻塞 删除容器的操作
+
+钩子处理器支持下面三种方式定义协作：
+
+1， Exec 命令： 在容器内执行一次命令
+
+  lifecycle:
+    poststart:
+      exec:
+        command:
+        - cat
+        - /tmp/healthy
+
+
+
+2, TCPSocket: 在当前容器尝试访问指定的socket
+  
+  lifecycle:
+    postStart:
+      tcpSocket:
+        port: 8080
+
+
+
+3, HTTPGet:  在当前容器中向某url 发起http 请求
+
+  lifecycle:
+    postStart:
+      httpGet:
+        path: / #RUL 地址
+        port: 80
+        host: 192.168.109.100 #主机地址
+        scheme: HTTP #支持的协议，http或者https
+
+
+        
