@@ -17,6 +17,8 @@ spec:
         scheme: HTTP
         port: 80
         path: /hello
+      initialDelaySeconds: 30#容器启动后30秒开始探测
+      timeoutSeconds: 5 探测超时时间为5秒
 
 
 
