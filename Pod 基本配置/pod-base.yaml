@@ -1,0 +1,17 @@
+# 这个配置文件中 ，在一个Pod 里面配置了 3个容器  ，分别是 ： nginx , busybox , redis
+
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: pod-base
+  namespace: dev2025
+  labels:
+    user: allen
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.17.1
+  - name: busybox
+    image: busybox:1.30
+  - name: redis
+    image: redis
