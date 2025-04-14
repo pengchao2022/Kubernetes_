@@ -1,0 +1,12 @@
+Pod 的整个生命周期中有五中状态：
+
+1, 挂起(pending)
+
+2, 运行中（running)
+
+3, 成功 (succeeded)
+
+4, 失败 (failed)
+
+5, 未知 (Unknown)
+
