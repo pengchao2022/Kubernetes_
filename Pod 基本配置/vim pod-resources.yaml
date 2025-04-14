@@ -12,8 +12,8 @@ spec:
         cpu: "2" #CPU限制，单位是core数
         memory: "10Gi" #内存限制
       requests: #请求资源(下限）
-        cpu: "1" CPU 限制，单位是core 数
-        memory: "10Mi" #内存限制
+        cpu: "1" #CPU 限制，单位是core 数 ，CPU 核心至少有一个，Pod 才可以成功启动
+        memory: "10Mi" #内存限制，内存至少为10M Pod 才可以成功启动
 
 
 
