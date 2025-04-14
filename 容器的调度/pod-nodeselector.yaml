@@ -1,0 +1,24 @@
+#Nodeselector 是基于标签的调度
+
+#先给 node 节点添加标签
+
+# kubectl label nodes node1 nodeenv=pro
+
+# kubectl label nodes node2 nodeenv=test
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pod-nodeselector
+  namespace: dev2025
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.17.1
+  nodeSelector:
+    nodeenv: pro #指定调度到具有nodeenv=pro 标签的节点上
+
+
+
+
+
