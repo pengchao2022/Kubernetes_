@@ -19,10 +19,10 @@ ipvs 模式
 
 Service 的类型有：
 
-1, ClusterIP
+1, ClusterIP ------ 只有在集群内部可以使用，没有实际价值
 
-2, NodePort
+2, NodePort ------- 在集群外部可以使用
 
-3, Loadbalance
+3, Loadbalance ------ 在集群外部可以使用
 
 4, ExternalName
