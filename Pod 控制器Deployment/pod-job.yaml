@@ -20,3 +20,7 @@ spec:
           command: ["bin/sh","-c","for i in 9 8 7 6 5 4 3 2 1; do echo $i;sleep 3;done"]
 
 
+#查看job 的命令
+
+kubectl get job -n dev2025
+
