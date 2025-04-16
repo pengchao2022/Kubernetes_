@@ -1,4 +1,8 @@
 
-扩容命令：
+#扩容命令：
 kubectl scale deploy nginx-deployment --replicas=5 -n dev2025  # 将Pod扩大到5个实例
+
+#使用编辑deployment 也可以实现扩容
+kubectl edit deploy nginx-deployment -n dev2025
+
 
