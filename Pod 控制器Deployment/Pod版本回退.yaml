@@ -11,3 +11,6 @@ kubectl rollout status deploy pod-nginx -n dev2025
 #版本更新加暂停
 kubectl set image deploy pod-nginx nginx=1.17.4 -n dev2025 && kubectl rollout pause Deployment pod-nginx -n dev2025
 
+#版本更新加暂停后的恢复更新
+
+kubectl rollout resume Deployment pod-nginx -n dev2025
