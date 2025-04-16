@@ -6,3 +6,5 @@
 
 通过访问Service 的入口地址就能访问到后面的pod服务。
 
+真正起作用的是Kube-proxy 的服务进行，当service 创建的时候，会通过 APIserver 写入etcd ,
+
