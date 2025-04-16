@@ -1,0 +1,24 @@
+#重建更新策略的应用
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pod-recreated
+  namespace: dev2025
+spec:
+  strategy: #更新策略
+    type: Recreate #重建更新策略
+  replicas: 3
+  selector:
+    mathLabels:
+      app: nginx-pod
+  template:
+    metadata:
+      labels:
+        app: nginx-pod
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.17.1
+
+
