@@ -9,5 +9,11 @@
 真正起作用的是Kube-proxy 的服务进行，当service 创建的时候，会通过 APIserver 写入etcd ,
 
 
+kube-proxy 目前支持三种工作模式：
 
+userspace 模式
+
+iptables 模式
+
+ipvs 模式
 
