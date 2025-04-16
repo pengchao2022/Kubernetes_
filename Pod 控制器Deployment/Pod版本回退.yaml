@@ -1,0 +1,7 @@
+# 有用的命令，record 记录
+kubectl create -f pod-rollout.yaml --record
+
+# 查看pod,rs,deploy 的详细信息
+kubectl get deploy,rs,pod -n dev2025
+
+
