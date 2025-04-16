@@ -1,0 +1,15 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: pod-hpa
+  namespace: dev2025
+spec:
+  minReplicas: 1 #最小Pod数量
+  maxReplicas: 10 #最大Pod数量
+  targetCPUUtilizationPercentage: 3 #CPU使用率指标3%
+  scaleTargetRef:  #指定要控制的nginx信息
+    apiVersion: apps/v1
+    kind: Deployment
+    name: nginx
+
+
