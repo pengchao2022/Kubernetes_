@@ -1,0 +1,8 @@
+在kubernetes 中，pod 是应用程序的载体，我们可以通过pod 的IP 来访问应用程序，但是Pod 的IP地址是不固定的，这就意味着不方便
+
+直接采用pod 的IP 对服务进行访问
+
+为了解决这个问题，kubernetes提供了Service 资源，Service 会对提供同一个服务的多个pod进行聚合，并且提供一个统一的入口地址，
+
+通过访问Service 的入口地址就能访问到后面的pod服务。
+
