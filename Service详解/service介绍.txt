@@ -15,3 +15,14 @@ userspace 模式
 iptables 模式
 
 ipvs 模式
+
+
+Service 的类型有：
+
+1, ClusterIP
+
+2, NodePort
+
+3, Loadbalance
+
+4, ExternalName

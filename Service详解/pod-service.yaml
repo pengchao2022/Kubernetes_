@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: service
+  nameservice: dev2025
+spec: #描述
+  selector: #标签选择器，用于确定当前service 代理哪些pod
+    app: nginx
+  type: #Service类型，指定service 的访问方式
+  clusterIP: #虚拟服务的IP地址
+  sessionAffinity: #session亲和性，支持ClusterIP, None两个选项
+  ports: #端口信息
+    - protocol: TCP
+      port: 3017  #service 端口
+      targetPort: 5003 #Pod 端口
+      nodePort: 31122 #主机端口
+
+
