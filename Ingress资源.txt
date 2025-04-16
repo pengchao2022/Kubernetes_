@@ -10,4 +10,19 @@ Ingress Controller
 
 Ingress 可以和域名绑定，实现了域名到主机的映射
 
+部署的顺序：
+
+Deployment --- Pod ----- Service -----Ingress
+
+使用deployment 可以部署好 pod 容器如，nginx
+
+使用 service 可以创建服务名称如： nginx-service
+
+             同时可以创建服务类型如： ClusterIP 但是并不需要IP地址
+
+使用Ingress 可以经服务通过创建规则rules 映射到http 主机或者域名，
+
+然后，外界只需访问域名即可获得服务
+
+
 
