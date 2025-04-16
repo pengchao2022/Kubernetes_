@@ -8,3 +8,8 @@ kubectl edit deploy nginx-deployment -n dev2025
 
 #deployment 支持两种更新策略，一种叫 重建更新， 一种叫 滚动更新
 
+1，重建更新： 一次性删掉老版本的Pod, 再依次重建新版本的Pod 
+
+2, 滚动更新： 先删除一部分老版本的Pod， 再重建一部分新版本的Pod , 老版本的Pod 越来越少， 新版本的Pod 越来越多
+
+
