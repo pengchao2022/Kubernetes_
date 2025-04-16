@@ -22,3 +22,13 @@ spec:
         image: nginx:1.17.1
 
 
+
+# 接下来使用 kubectl 部署:
+kubectl apply -f pod-recreated.yaml 
+
+# 查看pod 的运行情况并监视:
+kubectl get pods -n dev2025 -w
+
+#更新镜像的版本，比如将nginx 从1.17.1 更新到1.17.2
+kubectl set image deploy pod-recreated nginx=nginx:1.17.2 -n dev2025
+
