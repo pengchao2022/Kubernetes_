@@ -5,3 +5,6 @@ kubectl create -f pod-rollout.yaml --record
 kubectl get deploy,rs,pod -n dev2025
 
 
+#查看版本回退状态
+kubectl rollout status deploy pod-nginx -n dev2025
+
