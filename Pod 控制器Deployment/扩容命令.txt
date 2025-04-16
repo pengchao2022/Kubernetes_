@@ -6,3 +6,5 @@ kubectl scale deploy nginx-deployment --replicas=5 -n dev2025  # 将Pod扩大到
 kubectl edit deploy nginx-deployment -n dev2025
 
 
+#deployment 支持两种更新策略，一种叫 重建更新， 一种叫 滚动更新
+
