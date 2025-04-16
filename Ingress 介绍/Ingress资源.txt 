@@ -1,0 +1,13 @@
+Kubernetes 提供了Ingress 资源对象，Ingress 只需要一个NodePort 或者一个LB就可以满足暴露多个service 
+
+的需求
+
+Ingress 相当于一个7层的负载均衡器，是kubernetes 反向代理的一个抽象
+
+Ingress Controller
+
+注意，Ingress 的使用，必须依赖service ,也就是说，要先配置好service , 再配置Ingress ,
+
+Ingress 可以和域名绑定，实现了域名到主机的映射
+
+
