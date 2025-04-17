@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: volume-hostpath
+  namespace: dev2025
+spec:
+  containers:
+  - name: nginx
+    image: nginx:1.17.1
+    ports:
+    - containerPort: 80
+    volumeMounts:
+    - name: logs-volume
+      mountPath: /var/log/nginx
+  - name: busybox
+    image: busybox:1.30
+    command: ["/bin/sh","-c","tail -f /logs/access.log"]
+    volumeMounts:
+    - name: logs-volume
+      mountPath: /logs
+  volumes:
+  - name: logs-volume
+    hostPath:
+      path: /root/logs
+      type: DirectorOrCreate # 目录如果存在，就直接使用，目录如果不存在，就创建后再使用
