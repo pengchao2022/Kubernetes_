@@ -1,0 +1,6 @@
+
+#查看指定容器的标准输出命令：
+
+kubectl logs -f pod_name -n dev2025 -c busybox
+
+
