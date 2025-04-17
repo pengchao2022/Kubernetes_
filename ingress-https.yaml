@@ -1,0 +1,28 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-https
+  namespace: dev2025
+spec:
+  tls:
+    - hosts:
+      - nginx.bmw.com
+      - tomcat.bmw.com
+      serviceName: tls-secret :指定秘钥
+  rules:
+  - host: nginx.bmw.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: nginx-service
+          servicePort: 80
+  - host: tomcat.bmw.com
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: tomcat-service
+          servicePort: 8080
+
+
